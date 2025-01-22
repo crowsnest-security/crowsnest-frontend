@@ -10,8 +10,10 @@ export const useStyles = () => {
       alignItems: 'center',
       justifyContent: 'center',
       flexDirection: 'column',
-      width: 560,
-      height: 800,
+      flexGrow: 1,
+      height: '100%',
+      maxWidth: 560,
+      maxHeight: 800,
       backgroundColor: palette.primary.dark,
     }),
 

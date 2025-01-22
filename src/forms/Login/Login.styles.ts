@@ -6,8 +6,10 @@ export const useStyles = () => {
 
   return {
     wrapper: css({
-      width: 656,
-      height: 656,
+      display: 'flex',
+      flexGrow: 1,
+      maxWidth: 656,
+      maxHeight: 656,
       border: `1px solid ${palette.divider}`,
       padding: spacing(10, 6.5),
     }),
@@ -15,6 +17,7 @@ export const useStyles = () => {
     form: css({
       display: 'flex',
       flexDirection: 'column',
+      flexGrow: 1,
       gap: spacing(2),
     }),
   };
