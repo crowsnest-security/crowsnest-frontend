@@ -3,24 +3,31 @@ import { Typography } from '@/components/Typography';
 import { ControlledTextField } from '@/fields/ControlledTextField';
 import { Box, Checkbox, Divider, FormControlLabel, Link } from '@mui/material';
 import { FormProvider, useForm } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
 
 import { useStyles } from './Login.styles';
 
 const FormContext = () => {
+  const { t } = useTranslation();
+
   return (
     <>
-      <Typography variant="h5">Governance Engine Login</Typography>
+      <Typography variant="h5">{t('login.form.title')}</Typography>
       <Divider />
-      <ControlledTextField name="email" label="Email address" />
-      <ControlledTextField name="password" label="Password" type="password" />
+      <ControlledTextField name="email" label={t('login.form.email')} />
+      <ControlledTextField
+        name="password"
+        label={t('login.form.password')}
+        type="password"
+      />
 
       <FormControlLabel
         control={<Checkbox defaultChecked />}
-        label="I accept the Terms and Conditions"
+        label={t('login.form.acceptTerms')}
       />
 
-      <Button variant="contained">Sign in</Button>
-      <Link href="#">Forgot Password?</Link>
+      <Button variant="contained">{t('login.form.signIn')}</Button>
+      <Link href="#">{t('login.form.forgotPassword')}</Link>
 
       <Box
         display="flex"
@@ -34,7 +41,7 @@ const FormContext = () => {
       </Box>
 
       <Button variant="contained" disabled>
-        Sign in WITH SSO
+        {t('login.form.signInWithSSO')}
       </Button>
     </>
   );

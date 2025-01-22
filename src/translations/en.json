@@ -1,0 +1,23 @@
+{
+  "login": {
+    "imageDescription": {
+      "firstRow": "A new horizon for",
+      "secondRow": "cyber assurance"
+    },
+    "form": {
+      "title": "Governance Engine Login",
+      "email": "Email address",
+      "password": "Password",
+      "acceptTerms": "I accept the Terms and Conditions",
+      "forgotPassword": "Forgot Password?",
+      "signIn": "Sign in",
+      "signInWithSSO": "Sign in WITH SSO"
+    }
+  },
+  "header": {
+    "appName": "Governance Engine"
+  },
+  "routes": {
+    "dashboard": "Dashboard"
+  }
+}
