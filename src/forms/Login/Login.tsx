@@ -2,13 +2,11 @@ import { Button } from '@/components/Button';
 import { Typography } from '@/components/Typography';
 import { ControlledTextField } from '@/fields/ControlledTextField';
 import { Box, Checkbox, Divider, FormControlLabel, Link } from '@mui/material';
-import { FormProvider, useForm, useFormState } from 'react-hook-form';
+import { FormProvider, useForm } from 'react-hook-form';
 
 import { useStyles } from './Login.styles';
 
 const FormContext = () => {
-  const formState = useFormState();
-
   return (
     <>
       <Typography variant="h5">Governance Engine Login</Typography>
