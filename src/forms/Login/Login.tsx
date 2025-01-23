@@ -1,7 +1,8 @@
 import { Button } from '@/components/Button';
+import { Divider } from '@/components/Divider';
 import { Typography } from '@/components/Typography';
 import { ControlledTextField } from '@/fields/ControlledTextField';
-import { Box, Checkbox, Divider, FormControlLabel, Link } from '@mui/material';
+import { Checkbox, FormControlLabel, Link } from '@mui/material';
 import { FormProvider, useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 
@@ -29,16 +30,9 @@ const FormContext = () => {
       <Button variant="contained">{t('login.form.signIn')}</Button>
       <Link href="#">{t('login.form.forgotPassword')}</Link>
 
-      <Box
-        display="flex"
-        flexDirection="row"
-        justifyContent="space-between"
-        style={{ width: '100%', height: 10 }}
-      >
-        <Divider component="span" style={{ width: '46%' }} />
+      <Divider>
         <Typography variant="body2">or</Typography>
-        <Divider style={{ width: '46%' }} component="span" />
-      </Box>
+      </Divider>
 
       <Button variant="contained" disabled>
         {t('login.form.signInWithSSO')}

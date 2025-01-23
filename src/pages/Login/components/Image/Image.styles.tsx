@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 import { useTheme } from '@mui/material';
 
 export const useStyles = () => {
-  const { palette } = useTheme();
+  const { palette, spacing } = useTheme();
 
   return {
     wrapper: css({
@@ -18,7 +18,7 @@ export const useStyles = () => {
     }),
 
     logo: css({
-      marginBottom: 80,
+      margin: spacing(0, 8, 10, 8),
     }),
 
     whiteText: css({ color: palette.common.white }),
