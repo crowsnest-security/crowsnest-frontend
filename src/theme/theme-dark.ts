@@ -10,8 +10,10 @@ import { createTheme } from '@mui/material';
     700 – Bold.
     800 – Extra Bold (Ultra Bold)
  */
-export const theme = createTheme({
+// TODO: will be updated with new "Dark" values
+export const themeDark = createTheme({
   palette: {
+    mode: 'dark',
     common: {
       white: 'rgba(255, 255, 255, 1)', //#FFFFFF
       black: 'rgba(0, 0, 0, 0.87)', //#000000DE

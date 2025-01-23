@@ -7,13 +7,14 @@ export const useStyles = () => {
   return {
     root: css({
       display: 'flex',
-      justifyContent: 'space-between',
+
       alignItems: 'center',
       height: 80,
+    }),
 
-      backgroundColor: palette.primary.dark,
-
-      padding: spacing(0, 3),
+    toolbar: css({
+      display: 'flex',
+      justifyContent: 'space-between',
     }),
 
     box: css({

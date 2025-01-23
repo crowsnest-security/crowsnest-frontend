@@ -3,9 +3,9 @@ import CrowLogo from '@/assets/crow_logo.svg?react';
 import MenuFilledIcon from '@/assets/menu_filled.svg?react';
 import MoreVerticalIcon from '@/assets/more_vertical.svg?react';
 import NotificationsFilledIcon from '@/assets/notifications_filled.svg?react';
-import { TextFieldWithSearch } from '@/components/TextField';
+import { SearchInput } from '@/components/SearchInput';
 import { useRouteName } from '@/hooks/useRouteName';
-import { Avatar, Box, IconButton } from '@mui/material';
+import { AppBar, Avatar, Box, IconButton, Toolbar } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 
 import { Typography } from '../Typography';
@@ -18,44 +18,48 @@ export const Header = () => {
   const routeName = useRouteName();
 
   return (
-    <Box css={styles.root}>
-      <Box css={styles.box} gap={2}>
-        <MenuFilledIcon />
-        <CrowLogo />
-        <Typography variant="h6" css={styles.appName}>
-          {t('header.appName')}
-        </Typography>
-        {/* TODO: text according page route */}
-        <Typography variant="h6" css={styles.pageName}>
-          {routeName}
-        </Typography>
-      </Box>
+    <AppBar position="static">
+      <Toolbar css={styles.toolbar}>
+        <Box css={styles.box} gap={2}>
+          <IconButton color="inherit" aria-label="menu">
+            <MenuFilledIcon />
+          </IconButton>
+          <CrowLogo />
 
-      <Box css={styles.box} gap={1}>
-        <TextFieldWithSearch />
-        <Box css={styles.userInfo}>
-          <Box
-            display="flex"
-            flexDirection="column"
-            justifyContent="center"
-            alignItems="flex-end"
-          >
-            <Typography variant="overline" css={styles.usernameText}>
-              Name
-            </Typography>
-            <Typography variant="caption" css={styles.usernameText}>
-              Title
-            </Typography>
-          </Box>
-          <Avatar src={AvatarPhoto} />
+          <Typography variant="h6" css={styles.appName} component="span">
+            {t('header.appName')}
+          </Typography>
+
+          <Typography variant="h6" css={styles.pageName}>
+            {routeName}
+          </Typography>
         </Box>
-        <IconButton>
-          <NotificationsFilledIcon />
-        </IconButton>
-        <IconButton>
-          <MoreVerticalIcon />
-        </IconButton>
-      </Box>
-    </Box>
+        <Box css={styles.box} gap={1}>
+          <SearchInput />
+          <Box css={styles.userInfo}>
+            <Box
+              display="flex"
+              flexDirection="column"
+              justifyContent="center"
+              alignItems="flex-end"
+            >
+              <Typography variant="overline" css={styles.usernameText}>
+                Name
+              </Typography>
+              <Typography variant="caption" css={styles.usernameText}>
+                Title
+              </Typography>
+            </Box>
+            <Avatar src={AvatarPhoto} />
+          </Box>
+          <IconButton color="inherit">
+            <NotificationsFilledIcon />
+          </IconButton>
+          <IconButton color="inherit">
+            <MoreVerticalIcon />
+          </IconButton>
+        </Box>
+      </Toolbar>
+    </AppBar>
   );
 };

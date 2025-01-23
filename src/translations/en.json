@@ -15,7 +15,8 @@
     }
   },
   "header": {
-    "appName": "Governance Engine"
+    "appName": "Governance Engine",
+    "search": "Search"
   },
   "routes": {
     "dashboard": "Dashboard"
