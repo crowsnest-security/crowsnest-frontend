@@ -1,4 +1,5 @@
 import { MUIWrapper } from '@/providers/muiProvider';
+import { ReactQueryProvider } from '@/providers/react-query';
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
@@ -16,10 +17,12 @@ createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <I18nextProvider i18n={i18n}>
       <BrowserRouter>
-        <MUIWrapper>
-          <CssBaseline />
-          <App />
-        </MUIWrapper>
+        <ReactQueryProvider>
+          <MUIWrapper>
+            <CssBaseline />
+            <App />
+          </MUIWrapper>
+        </ReactQueryProvider>
       </BrowserRouter>
     </I18nextProvider>
   </StrictMode>,

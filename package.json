@@ -11,7 +11,8 @@
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "test": "jest"
+    "test": "jest",
+    "start:cors-proxy": "cors-proxy http://localhost:8080 -p 8001"
   },
   "dependencies": {
     "@emotion/babel-preset-css-prop": "^11.12.0",
@@ -20,6 +21,7 @@
     "@fontsource/roboto": "^5.1.1",
     "@mui/material": "^6.4.0",
     "@tanstack/react-query": "^5.64.1",
+    "@tanstack/react-query-devtools": "^5.64.2",
     "axios": "^1.7.9",
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
@@ -37,6 +39,7 @@
     "@chromatic-com/storybook": "^3.2.3",
     "@emotion/babel-plugin": "^11.13.5",
     "@eslint/js": "^9.18.0",
+    "@hectorricardo/cors-proxy": "^1.0.7",
     "@storybook/addon-essentials": "^8.5.0",
     "@storybook/addon-interactions": "^8.5.0",
     "@storybook/addon-onboarding": "^8.5.0",
