@@ -15,6 +15,8 @@ export const useStyles = () => {
     toolbar: css({
       display: 'flex',
       justifyContent: 'space-between',
+
+      backgroundColor: palette.primary.dark,
     }),
 
     box: css({

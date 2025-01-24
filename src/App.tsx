@@ -3,6 +3,8 @@ import { Routes } from '@/contstants/routes';
 import { LoginPage } from '@/pages/Login';
 import { Routes as ReactRoutes, Route } from 'react-router';
 
+import { DashboardPage } from './pages/Dashboard';
+
 const App = () => {
   return (
     <ReactRoutes>
@@ -11,7 +13,7 @@ const App = () => {
       </Route>
 
       <Route path={Routes.INDEX} element={<AuthorizedLayout />}>
-        <Route index element={<span>Home</span>} />
+        <Route index element={<DashboardPage />} />
       </Route>
     </ReactRoutes>
   );

@@ -135,13 +135,4 @@ export const themeDark = createTheme({
       lineHeight: '32px',
     },
   },
-  components: {
-    MuiToolbar: {
-      styleOverrides: {
-        root: ({ theme }) => ({
-          backgroundColor: theme.palette.primary.dark,
-        }),
-      },
-    },
-  },
 });
