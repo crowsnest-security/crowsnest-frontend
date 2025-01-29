@@ -1,3 +1,4 @@
+import { HEADER_HEIGHT } from '@/constants/layout';
 import { css } from '@emotion/react';
 import { useTheme } from '@mui/material';
 
@@ -9,7 +10,7 @@ export const useStyles = () => {
       display: 'flex',
 
       alignItems: 'center',
-      height: 80,
+      height: HEADER_HEIGHT,
     }),
 
     toolbar: css({

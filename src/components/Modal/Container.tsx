@@ -13,7 +13,6 @@ export const ModalsContainer: React.FC<ModalContainerProps> = ({
   ...otherProps
 }) => {
   const modalStyles = useStyles();
-  console.log('otherProps', otherProps);
 
   return (
     <Dialog

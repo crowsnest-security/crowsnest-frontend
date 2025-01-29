@@ -1,5 +1,5 @@
 import { AuthorizedLayout, UnauthorizedLayout } from '@/components/Layout';
-import { Routes } from '@/contstants/routes';
+import { Routes } from '@/constants/routes';
 import { LoginPage } from '@/pages/Login';
 import { Routes as ReactRoutes, Route } from 'react-router';
 

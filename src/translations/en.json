@@ -20,5 +20,10 @@
   },
   "routes": {
     "dashboard": "Dashboard"
+  },
+  "dashboard": {
+    "descriptions": {
+      "index": "Current domains and configured capability integrations"
+    }
   }
 }

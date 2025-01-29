@@ -1,5 +1,5 @@
 import { MenuItemsList } from '@/components/MenuItemList';
-import { MENU_LIST } from '@/contstants/drawer';
+import { MENU_LIST } from '@/constants/drawer';
 import { useLayoutStore } from '@/stores/layout';
 import { Drawer as MuiDrawer } from '@mui/material';
 

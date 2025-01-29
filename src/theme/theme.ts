@@ -129,7 +129,7 @@ export const theme = createTheme({
     },
     overline: {
       fontSize: '0.75rem', // 12px
-      fontWeight: 700,
+      fontWeight: 400,
       lineHeight: '32px',
     },
   },

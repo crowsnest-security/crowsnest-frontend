@@ -11,7 +11,7 @@ export const useStyles = () => {
       justifyContent: 'center',
       flexDirection: 'column',
       flexGrow: 1,
-      height: '100%',
+      height: `calc(100% - 40px)`,
       maxWidth: 560,
       maxHeight: 800,
       backgroundColor: palette.primary.dark,
