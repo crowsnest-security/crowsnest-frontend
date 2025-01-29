@@ -5,21 +5,23 @@ import { Typography } from '@/components/Typography';
 import { useMenu } from '@/hooks/useMenu';
 import { useMUIValues } from '@/providers/muiProvider';
 import { Box, IconButton, useTheme } from '@mui/material';
+import { useTranslation } from 'react-i18next';
 
 const ThemeSwitch = () => {
   const { palette } = useTheme();
   const { toggleColorMode } = useMUIValues();
+  const { t } = useTranslation();
 
   const isDarkMode = palette.mode === 'dark';
 
   return (
     <Box>
       <Typography variant="body1" component="span">
-        Light mode
+        {t('header.lightMode')}
       </Typography>
       <Switch checked={isDarkMode} onChange={toggleColorMode} />
       <Typography variant="body1" component="span">
-        Dark mode
+        {t('header.darkMode')}
       </Typography>
     </Box>
   );
