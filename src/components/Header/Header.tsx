@@ -1,7 +1,6 @@
 import AvatarPhoto from '@/assets/avatar.png';
 import CrowLogo from '@/assets/crow_logo.svg?react';
 import MenuFilledIcon from '@/assets/menu_filled.svg?react';
-import MoreVerticalIcon from '@/assets/more_vertical.svg?react';
 import NotificationsFilledIcon from '@/assets/notifications_filled.svg?react';
 import { SearchInput } from '@/components/SearchInput';
 import { useRouteName } from '@/hooks/useRouteName';
@@ -11,6 +10,7 @@ import { useTranslation } from 'react-i18next';
 
 import { Typography } from '../Typography';
 import { useStyles } from './Header.styles';
+import { ProfileMenu } from './ProfileMenu';
 
 export const Header = () => {
   const styles = useStyles();
@@ -58,9 +58,7 @@ export const Header = () => {
             <IconButton color="inherit">
               <NotificationsFilledIcon />
             </IconButton>
-            <IconButton color="inherit">
-              <MoreVerticalIcon />
-            </IconButton>
+            <ProfileMenu />
           </Box>
         </Toolbar>
       </AppBar>
