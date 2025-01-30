@@ -4,6 +4,7 @@ import { useLocation } from 'react-router';
 
 const DASHBOARD_DESCRIPTIONS = {
   [Routes.INDEX]: i18n.t('dashboard.descriptions.index'),
+  [Routes.DOMAINS]: i18n.t('dashboard.descriptions.domains'),
 };
 
 export const useDashboardDescription = () => {

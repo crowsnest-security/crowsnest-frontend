@@ -19,7 +19,7 @@ export const ChipGroup: React.FC<ChipGroupProps> = ({
     <Box display="flex" flexDirection="row" gap={1}>
       {chips?.map((chip) => (
         <Chip
-          css={activeChip === chip?.id && styles.activeChip}
+          css={[styles.root, activeChip === chip?.id && styles.activeChip]}
           variant="outlined"
           key={chip.id}
           label={chip.label}

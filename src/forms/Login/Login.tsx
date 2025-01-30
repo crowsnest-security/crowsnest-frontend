@@ -41,14 +41,14 @@ const FormContext = () => {
   );
 };
 
-export interface EventFiltersForm {
+export interface LoginFormValues {
   email: string;
   password: string;
 }
 
 export const LoginForm = () => {
   const styles = useStyles();
-  const formMethods = useForm<EventFiltersForm>({
+  const formMethods = useForm<LoginFormValues>({
     mode: 'all',
   });
 

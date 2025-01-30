@@ -1,31 +1,24 @@
 import { Drawer } from '@/components/Drawer';
 import { Header } from '@/components/Header';
+import { Routes } from '@/constants/routes';
 import { useDashboardDescription } from '@/hooks/useDashboardDescription';
 import { useProfilesListQuery } from '@/queries/profile';
-import { useCommonDataStore } from '@/stores/common';
 import { Box, CircularProgress } from '@mui/material';
-import { useState } from 'react';
-import { Outlet } from 'react-router';
+import { Outlet, useLocation } from 'react-router';
 
 import { Breadcrumbs } from '../Breadcrumbs';
 import { ModeSwitch } from '../ModeSwitch';
 import { ProfilesGroup } from '../ProfilesGroup';
-import { Tabs } from '../Tabs';
 import { Typography } from '../Typography';
 import { useStyles } from './Layout.styles';
-import { DASHBOARD_TAB_VALUE, TABS } from './constants';
+import { LayoutTabs } from './LayoutTabs';
 
 export const AuthorizedLayout: React.FC = () => {
   const styles = useStyles();
-  const { mode } = useCommonDataStore();
-  const isAdminMode = mode === 'admin';
   const description = useDashboardDescription();
+  const { pathname } = useLocation();
 
-  const [activeTab, setActiveTab] = useState(DASHBOARD_TAB_VALUE);
-
-  const handleChange = (_event: React.SyntheticEvent, newValue: number) => {
-    setActiveTab(newValue);
-  };
+  const isDashboardActive = pathname === Routes.INDEX;
 
   const { isLoading } = useProfilesListQuery();
 
@@ -42,24 +35,14 @@ export const AuthorizedLayout: React.FC = () => {
             <Box css={styles.controls}>
               <Breadcrumbs />
               <Box css={styles.leftControls}>
-                <ProfilesGroup />
+                {isDashboardActive && <ProfilesGroup />}
                 <ModeSwitch />
               </Box>
             </Box>
             <Typography variant="body1" css={styles.description}>
               {description}
             </Typography>
-            {isAdminMode ? (
-              <Tabs
-                tabs={TABS}
-                value={activeTab}
-                onChange={handleChange}
-                withBackground
-                css={styles.tabs}
-              />
-            ) : (
-              <Box />
-            )}
+            <LayoutTabs />
             <Outlet />
           </Box>
         )}

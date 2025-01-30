@@ -56,13 +56,11 @@ export const Menu: React.FC<MenuProps> = ({
       //   anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       {...props}
     >
-      {items?.map((item) =>
-        item.onClick ? (
-          <MenuItem onClick={item.onClick}>{item.content}</MenuItem>
-        ) : (
-          <MenuItem>{item.content}</MenuItem>
-        ),
-      )}
+      {items?.map((item, index) => (
+        <MenuItem key={index} onClick={item.onClick}>
+          {item.content}
+        </MenuItem>
+      ))}
     </MuiMenu>
   );
 };

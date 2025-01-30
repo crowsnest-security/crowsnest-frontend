@@ -1,0 +1,15 @@
+import { css } from '@emotion/react';
+import { useTheme } from '@mui/material';
+
+export const useStyles = () => {
+  const { spacing } = useTheme();
+
+  return {
+    modalsContent: css({
+      display: 'flex',
+      flexDirection: 'column',
+      gap: spacing(4),
+      maxWidth: 440,
+    }),
+  };
+};
