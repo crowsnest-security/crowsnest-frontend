@@ -1,5 +1,5 @@
 import { ClassNames } from '@emotion/react';
-import { Dialog, DialogTitle, css } from '@mui/material';
+import { Dialog, DialogTitle } from '@mui/material';
 import React from 'react';
 
 import { useStyles } from './styles';
