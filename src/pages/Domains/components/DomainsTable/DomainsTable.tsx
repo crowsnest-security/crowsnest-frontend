@@ -3,7 +3,7 @@ import { Table } from '@/components/Table';
 import { DOMAINS_QUERY_KEY } from '@/constants/queryKeys';
 import { useToggle } from '@/hooks/useToggle';
 import { useDomainDeleteMutation, useDomainsListQuery } from '@/queries/domain';
-import { IconButton } from '@mui/material';
+import { IconButton, useTheme } from '@mui/material';
 import { GridColDef, GridRenderCellParams } from '@mui/x-data-grid';
 import { useQueryClient } from '@tanstack/react-query';
 
@@ -11,6 +11,7 @@ import { DeleteDomainModal } from '../DeleteDomainModal';
 
 const DeleteCell = (params: GridRenderCellParams) => {
   const queryClient = useQueryClient();
+  const { palette } = useTheme();
   const { isOpen, toggle } = useToggle();
   const domainId = params.row.id;
 
@@ -23,7 +24,7 @@ const DeleteCell = (params: GridRenderCellParams) => {
   return (
     <>
       <IconButton onClick={toggle}>
-        <DeleteFilledIcon />
+        <DeleteFilledIcon css={{ fill: palette.action.active }} />
       </IconButton>
       <DeleteDomainModal
         isOpen={isOpen}

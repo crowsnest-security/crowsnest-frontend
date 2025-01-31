@@ -6,7 +6,7 @@ import { useProfilesListQuery } from '@/queries/profile';
 import { Box, CircularProgress } from '@mui/material';
 import { Outlet, useLocation } from 'react-router';
 
-import { Breadcrumbs } from '../Breadcrumbs';
+// import { Breadcrumbs } from '../Breadcrumbs';
 import { ModeSwitch } from '../ModeSwitch';
 import { ProfilesGroup } from '../ProfilesGroup';
 import { Typography } from '../Typography';

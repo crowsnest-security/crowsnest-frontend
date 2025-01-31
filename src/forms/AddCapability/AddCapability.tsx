@@ -1,6 +1,5 @@
 import { Button } from '@/components/Button';
 import { DATE_FORMAT } from '@/constants/date';
-import { CAPABILITIES_WITH_DOMAIN_ENDPOINT } from '@/constants/endpoints';
 import { CAPABILITIES_WITH_DOMAIN_QUERY_KEY } from '@/constants/queryKeys';
 import { ControlledSelect } from '@/fields/ControlledSelect';
 import { ControlledTextField } from '@/fields/ControlledTextField';
