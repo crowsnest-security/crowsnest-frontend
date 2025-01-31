@@ -1,17 +1,16 @@
-import FailImage from '@/assets/fail.png';
-import PassImage from '@/assets/pass.png';
+import AppStatusIcon from '@/assets/app_status.svg?react';
 import {
   Avatar,
   Box,
   CardActions,
   CardContent,
   CardHeader,
-  CardMedia,
   Card as MuiCard,
 } from '@mui/material';
 
 import { Divider } from '../Divider';
 import { Typography } from '../Typography';
+import { useStyles } from './Card.styles';
 
 type CardProps = {
   status?: boolean;
@@ -28,6 +27,8 @@ export const Card: React.FC<CardProps> = ({
   title,
   content,
 }) => {
+  const styles = useStyles();
+
   return (
     <MuiCard
       sx={{ maxWidth: 266, boxShadow: '0px 4px 4px 0px rgba(0, 0, 0, 0.25)' }}
@@ -46,11 +47,7 @@ export const Card: React.FC<CardProps> = ({
           flexGrow={1}
           width="100%"
         >
-          <CardMedia
-            component="img"
-            image={status ? PassImage : FailImage}
-            alt={status ? 'Pass' : 'Fail'}
-          />
+          <AppStatusIcon css={status ? styles.appSuccess : styles.appFail} />
         </Box>
       )}
       {content && (
