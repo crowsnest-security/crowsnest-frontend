@@ -24,22 +24,32 @@
     "dashboard": "Dashboard",
     "applications": "Applications",
     "profiles": "Profiles",
-    "domains": "Domains"
+    "domains": "Domains",
+    "capabilities": "Capabilities"
   },
   "dashboard": {
     "descriptions": {
       "index": "Current domains and configured capability integrations",
-      "domains": "Manage the application domains"
+      "domains": "Manage the application domains",
+      "capabilities": "Manage the capabilities associated with application domains"
     },
     "keyCapabilities": "Key capabilities"
   },
-  "domains" : {
+  "domains": {
     "addDomain": "Add domain",
     "alert": "Deleting a domain will delete any associated child capabilities",
     "placeholder": "Name",
     "domainName": "Domain Name *"
   },
   "validation": {
-    "required":"Required"
+    "required": "Required"
+  },
+  "capabilities": {
+    "description": "Use the tree structure to view and delete capabilities",
+    "note": "Note: You cannot delete capabilities which have active integrations",
+    "capabilityName": "Capability Name *",
+    "placeholder": "Name",
+    "selectDomain": "Select Domain *",
+    "addCapability": "Add capability"
   }
 }

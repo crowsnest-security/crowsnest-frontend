@@ -11,6 +11,10 @@ import { useTranslation } from 'react-i18next';
 
 import { useStyles } from './AddDomain.styles';
 
+export interface AddDomainValues {
+  domainName: string;
+}
+
 const FormContext = () => {
   const { t } = useTranslation();
   const styles = useStyles();
@@ -37,10 +41,6 @@ const FormContext = () => {
     </>
   );
 };
-
-export interface AddDomainValues {
-  domainName: string;
-}
 
 export const AddDomainForm = () => {
   const styles = useStyles();

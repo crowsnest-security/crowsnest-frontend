@@ -51,7 +51,7 @@ export const useStyles = () => {
     controls: css({
       display: 'flex',
       flexDirection: 'row',
-      justifyContent: 'space-between',
+      justifyContent: 'flex-end',
       alignItems: 'center',
 
       padding: spacing(0, 3),

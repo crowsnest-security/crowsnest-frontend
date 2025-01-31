@@ -4,4 +4,5 @@ export enum Routes {
   APPLICATIONS = '/applications',
   PROFILES = '/profiles',
   DOMAINS = '/domains',
+  CAPABILITIES = '/capabilities',
 }

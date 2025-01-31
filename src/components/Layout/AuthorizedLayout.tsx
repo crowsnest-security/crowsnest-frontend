@@ -33,7 +33,8 @@ export const AuthorizedLayout: React.FC = () => {
         ) : (
           <Box css={styles.content}>
             <Box css={styles.controls}>
-              <Breadcrumbs />
+              {/* TODO: disabled for now due to tabs have the same functionality */}
+              {/* <Breadcrumbs /> */}
               <Box css={styles.leftControls}>
                 {isDashboardActive && <ProfilesGroup />}
                 <ModeSwitch />

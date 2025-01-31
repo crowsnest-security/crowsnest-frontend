@@ -4,7 +4,7 @@ import DownloadIcon from '@/assets/download_icon.svg?react';
 import WatchIcon from '@/assets/visibility_icon.svg?react';
 import { Card } from '@/components/Card';
 import { Typography } from '@/components/Typography';
-import { useCapabilityListWithDomainQuery } from '@/queries/capabilities';
+import { useCapabilityListByDomainQuery } from '@/queries/capabilities';
 import { useFlagsListQuery } from '@/queries/flag';
 import { Box, IconButton } from '@mui/material';
 import { useTranslation } from 'react-i18next';
@@ -34,7 +34,7 @@ const ContentItem: React.FC<ContentItemProps> = ({ checked, title }) => {
 
 export const DomainCard: React.FC<DomainCardProps> = ({ domainId }) => {
   const { t } = useTranslation();
-  const { data: capabilities } = useCapabilityListWithDomainQuery({ domainId });
+  const { data: capabilities } = useCapabilityListByDomainQuery({ domainId });
   const { data: flags } = useFlagsListQuery();
   const redFlagId = flags?.find((flag) => flag.description === 'red')?.id;
 
