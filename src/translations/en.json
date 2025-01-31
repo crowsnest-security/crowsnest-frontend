@@ -15,9 +15,41 @@
     }
   },
   "header": {
-    "appName": "Governance Engine"
+    "appName": "Governance Engine",
+    "search": "Search",
+    "darkMode": "Dark mode",
+    "lightMode": "Light mode"
   },
   "routes": {
-    "dashboard": "Dashboard"
+    "dashboard": "Dashboard",
+    "applications": "Applications",
+    "profiles": "Profiles",
+    "domains": "Domains",
+    "capabilities": "Capabilities"
+  },
+  "dashboard": {
+    "descriptions": {
+      "index": "Current domains and configured capability integrations",
+      "domains": "Manage the application domains",
+      "capabilities": "Manage the capabilities associated with application domains"
+    },
+    "keyCapabilities": "Key capabilities"
+  },
+  "domains": {
+    "addDomain": "Add domain",
+    "alert": "Deleting a domain will delete any associated child capabilities",
+    "placeholder": "Name",
+    "domainName": "Domain Name *"
+  },
+  "validation": {
+    "required": "Required"
+  },
+  "capabilities": {
+    "description": "Use the tree structure to view and delete capabilities",
+    "note": "Note: You cannot delete capabilities which have active integrations",
+    "capabilityName": "Capability Name *",
+    "placeholder": "Name",
+    "selectDomain": "Select Domain *",
+    "addCapability": "Add capability"
   }
 }
