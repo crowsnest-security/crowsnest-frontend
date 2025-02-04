@@ -1,4 +1,4 @@
-import { ROUTE_NAMES } from '@/contstants/routeNames';
+import { ROUTE_NAMES } from '@/constants/routeNames';
 import { useLocation } from 'react-router';
 
 export const useRouteName = () => {

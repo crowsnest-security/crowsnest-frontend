@@ -45,11 +45,33 @@ cd crowsnest-frontend
 ```
 npm install
 ```
-##### 4) Start the development server:
+###### 3.1) Launch from a branch different from main
+
+ Before installing dependencies you should checkout to specific branch with command
+```
+ git switch [YOUR_BRANCH_NAME]
+```
+##### 4) Setup and run local backend instance:
+###### 4.1) Download backend image
+```
+    docker pull quay.io/ablock/crowsnest-backend:latest
+```
+###### 4.2) Run downloaded image with docker 
+```
+    docker run -p 8080:8080 quay.io/ablock/crowsnest-backend:latest
+```
+##### 5) Start the local CORS proxy in the separate terminal tab:
+```
+    npm run start:cors-proxy
+```
+###### 5.1) Add .env file
+Add the .env file to the root of the project and initialize the variables as in the .env.example file.
+
+##### 6) Start the development server:
 ```
 npm run dev
 ```
-##### 5) Open your browser and navigate to:
+##### 7) Open your browser and navigate to:
 Open your browser and navigate to: [CrowsNest frontend](http://localhost:5173).
 
 ## 2. How-To Guides

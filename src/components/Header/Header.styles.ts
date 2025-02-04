@@ -1,3 +1,4 @@
+import { HEADER_HEIGHT } from '@/constants/layout';
 import { css } from '@emotion/react';
 import { useTheme } from '@mui/material';
 
@@ -7,13 +8,16 @@ export const useStyles = () => {
   return {
     root: css({
       display: 'flex',
-      justifyContent: 'space-between',
+
       alignItems: 'center',
-      height: 80,
+      height: HEADER_HEIGHT,
+    }),
+
+    toolbar: css({
+      display: 'flex',
+      justifyContent: 'space-between',
 
       backgroundColor: palette.primary.dark,
-
-      padding: spacing(0, 3),
     }),
 
     box: css({

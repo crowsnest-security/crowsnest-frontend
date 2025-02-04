@@ -4,7 +4,7 @@ import { Outlet } from 'react-router';
 
 import { useStyles } from './Layout.styles';
 
-export const Layout: React.FC = () => {
+export const UnauthorizedLayout: React.FC = () => {
   const styles = useStyles();
 
   return (

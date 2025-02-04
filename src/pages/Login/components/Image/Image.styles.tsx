@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 import { useTheme } from '@mui/material';
 
 export const useStyles = () => {
-  const { palette } = useTheme();
+  const { palette, spacing } = useTheme();
 
   return {
     wrapper: css({
@@ -11,14 +11,14 @@ export const useStyles = () => {
       justifyContent: 'center',
       flexDirection: 'column',
       flexGrow: 1,
-      height: '100%',
+      height: `calc(100% - 40px)`,
       maxWidth: 560,
       maxHeight: 800,
       backgroundColor: palette.primary.dark,
     }),
 
     logo: css({
-      marginBottom: 80,
+      margin: spacing(0, 8, 10, 8),
     }),
 
     whiteText: css({ color: palette.common.white }),
