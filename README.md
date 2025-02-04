@@ -64,6 +64,9 @@ npm install
 ```
     npm run start:cors-proxy
 ```
+###### 5.1) Add .env file
+Add the .env file to the root of the project and initialize the variables as in the .env.example file.
+
 ##### 6) Start the development server:
 ```
 npm run dev
