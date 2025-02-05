@@ -10,17 +10,17 @@ import { useStyles } from './ProfilesGroup.styles';
 export const ProfilesGroup = () => {
   const styles = useStyles();
   const { data } = useProfilesListQuery();
-  const { activeProfileId, setActiveProfileId } = useCommonDataStore();
+  const { activeProfile, setActiveProfile } = useCommonDataStore();
 
   useEffect(() => {
     if (data) {
-      setActiveProfileId(data?.[0]?.id || undefined);
+      setActiveProfile(data?.[0]?.id || undefined);
     }
-  }, [data, setActiveProfileId]);
+  }, [data, setActiveProfile]);
 
   const profileItems = data?.map((profile) => ({
     label: profile.name,
-    id: profile.id,
+    value: profile.id,
   }));
 
   return (
@@ -31,8 +31,8 @@ export const ProfilesGroup = () => {
       {profileItems && (
         <ChipGroup
           chips={profileItems}
-          activeChip={activeProfileId}
-          setActiveChip={setActiveProfileId}
+          activeChips={activeProfile ? [activeProfile] : []}
+          setActiveChip={setActiveProfile}
         />
       )}
     </Box>

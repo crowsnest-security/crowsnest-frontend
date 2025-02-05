@@ -33,7 +33,8 @@
       "index": "Current domains and configured capability integrations",
       "domains": "Manage the application domains",
       "capabilities": "Manage the capabilities associated with application domains",
-      "integrations": "Edit current integrations or add new integration"
+      "integrations": "Edit current integrations or add new integration",
+      "profiles": "Manage the application profile mandates"
     },
     "keyCapabilities": "Key capabilities"
   },
@@ -71,5 +72,15 @@
     "addIntegration": "Add integration",
     "editIntegration": "Edit integration",
     "cancel": "Cancel"
+  },
+  "profiles": {
+    "addNew":"Add new profile",
+    "profileName": "Profile name",
+    "profileDescription": "Profile description" ,
+    "profileDescriptionPlaceholder": "Description of the profile" ,
+    "selectDomains":"Select Domains to form the Profile",
+    "cancel": "Cancel",
+    "addProfile": "Add Profile",
+    "editProfile": "Edit Profile"
   }
 }

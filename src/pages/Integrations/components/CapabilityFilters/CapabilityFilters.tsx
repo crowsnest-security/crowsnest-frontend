@@ -14,7 +14,7 @@ export const CapabilityFilters = () => {
   const styles = useStyles();
   const { data: integrations } = useIntegrationsListQuery();
   const { data: capabilities } = useCapabilityListQuery();
-  const { activeCapability, setActiveCapability } = useIntegrationsStore();
+  const { activeCapabilities, setActiveCapability } = useIntegrationsStore();
 
   const capabilityItems = useMemo(() => {
     const capabilitiesIds = Array.from(
@@ -28,7 +28,7 @@ export const CapabilityFilters = () => {
         ?.description || '';
 
     return capabilitiesIds?.map((capabilityId) => ({
-      id: capabilityId,
+      value: capabilityId,
       label: getCapabilityNameById(capabilityId),
     }));
   }, [integrations, capabilities]);
@@ -41,7 +41,7 @@ export const CapabilityFilters = () => {
       {capabilityItems?.length > 0 && (
         <ChipGroup
           chips={capabilityItems}
-          activeChip={activeCapability}
+          activeChips={activeCapabilities}
           setActiveChip={setActiveCapability}
         />
       )}

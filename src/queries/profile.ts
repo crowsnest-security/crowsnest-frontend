@@ -8,7 +8,7 @@ import {
 } from '@/constants/queryKeys';
 import { Profile } from '@/types/profile';
 import { axios } from '@/utils/axios';
-import { useQuery } from '@tanstack/react-query';
+import { useMutation, useQuery } from '@tanstack/react-query';
 
 const fetchProfilesList = (): Promise<Profile[]> =>
   axios.get(PROFILES_ENDPOINT).then((response) => response.data);
@@ -32,3 +32,54 @@ export const useProfileQuery = ({ id }: { id?: number }) =>
     enabled: !!id,
     staleTime: 600_000, // 10mins
   });
+
+const createProfile = (profileData: Omit<Profile, 'id'>) => {
+  return axios({
+    url: PROFILES_ENDPOINT,
+    method: 'POST',
+    data: {
+      ...profileData,
+    },
+  });
+};
+
+export const useProfileCreateMutation = ({
+  onSuccess,
+}: {
+  onSuccess: () => void;
+}) => {
+  return useMutation({ mutationFn: createProfile, onSuccess });
+};
+
+const updateProfile = ({ id, ...profileData }: Profile) => {
+  return axios({
+    url: PROFILES_BY_ID_ENDPOINT.replace('{id}', id.toString()),
+    method: 'PUT',
+    data: {
+      ...profileData,
+    },
+  });
+};
+
+export const useProfileUpdateMutation = ({
+  onSuccess,
+}: {
+  onSuccess: () => void;
+}) => {
+  return useMutation({ mutationFn: updateProfile, onSuccess });
+};
+
+const deleteProfile = (id: Pick<Profile, 'id'>) => {
+  return axios({
+    url: PROFILES_BY_ID_ENDPOINT.replace('{id}', id.toString()),
+    method: 'DELETE',
+  });
+};
+
+export const useProfileDeleteMutation = ({
+  onSuccess,
+}: {
+  onSuccess: () => void;
+}) => {
+  return useMutation({ mutationFn: deleteProfile, onSuccess });
+};

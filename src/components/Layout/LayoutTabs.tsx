@@ -2,7 +2,7 @@ import { Tabs } from '@/components/Tabs';
 import { Routes } from '@/constants/routes';
 import { useCommonDataStore } from '@/stores/common';
 import { useEffect, useState } from 'react';
-import { useLocation, useNavigate } from 'react-router';
+import { To, useLocation, useNavigate } from 'react-router';
 
 import { useStyles } from './Layout.styles';
 import { DASHBOARD_TAB_VALUE, TABS } from './constants';
@@ -37,7 +37,7 @@ export const LayoutTabs = () => {
     setActiveTab(newValue);
     const newRoute = TABS?.find((tab) => tab.value === newValue)?.route;
     if (newRoute) {
-      navigate(newRoute);
+      navigate(newRoute as To);
     }
   };
 

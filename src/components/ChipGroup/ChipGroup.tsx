@@ -3,14 +3,15 @@ import { Box, Chip } from '@mui/material';
 import { useStyles } from './ChipGroup.styles';
 
 type ChipGroupProps = {
-  chips: Array<{ label: string; id: number }>;
-  activeChip?: number;
-  setActiveChip: (id?: number) => void;
+  chips: Array<{ label: string; value: number }>;
+  activeChips?: Array<number>;
+  setActiveChip: (id: number) => void;
 };
 
 export const ChipGroup: React.FC<ChipGroupProps> = ({
   chips,
-  activeChip,
+  activeChips,
+  //single change of chip
   setActiveChip,
 }) => {
   const styles = useStyles();
@@ -25,11 +26,14 @@ export const ChipGroup: React.FC<ChipGroupProps> = ({
     >
       {chips?.map((chip) => (
         <Chip
-          key={chip.id}
-          css={[styles.root, activeChip === chip?.id && styles.activeChip]}
+          key={chip.value}
+          css={[
+            styles.root,
+            activeChips?.includes(chip?.value) && styles.activeChip,
+          ]}
           variant="outlined"
           label={chip.label}
-          onClick={() => setActiveChip(chip.id)}
+          onClick={() => setActiveChip(chip.value)}
         />
       ))}
     </Box>

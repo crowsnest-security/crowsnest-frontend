@@ -8,17 +8,17 @@ import { COLUMNS } from './columns';
 export const IntegrationsTable = () => {
   const { data: integrations } = useIntegrationsListQuery();
 
-  const { activeCapability } = useIntegrationsStore();
+  const { activeCapabilities } = useIntegrationsStore();
 
   const data = useMemo(() => {
-    if (!activeCapability) {
+    if (!activeCapabilities || activeCapabilities?.length === 0) {
       return integrations;
     }
 
-    return integrations?.filter(
-      (integration) => integration.capability === activeCapability,
+    return integrations?.filter((integration) =>
+      activeCapabilities?.includes(integration.capability),
     );
-  }, [activeCapability, integrations]);
+  }, [activeCapabilities, integrations]);
 
   return (
     <Table
@@ -29,6 +29,7 @@ export const IntegrationsTable = () => {
       disableColumnFilter
       disableColumnSorting
       disableColumnMenu
+      disableColumnResize
       pageSizeOptions={[5, 10, 15, 25]}
     />
   );

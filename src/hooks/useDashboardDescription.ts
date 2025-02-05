@@ -7,6 +7,7 @@ const DASHBOARD_DESCRIPTIONS = {
   [Routes.DOMAINS]: i18n.t('dashboard.descriptions.domains'),
   [Routes.CAPABILITIES]: i18n.t('dashboard.descriptions.capabilities'),
   [Routes.INTEGRATIONS]: i18n.t('dashboard.descriptions.integrations'),
+  [Routes.PROFILES]: i18n.t('dashboard.descriptions.profiles'),
 };
 
 export const useDashboardDescription = () => {

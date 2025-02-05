@@ -3,6 +3,7 @@ import { DATE_FORMAT } from '@/constants/date';
 import { CAPABILITIES_WITH_DOMAIN_QUERY_KEY } from '@/constants/queryKeys';
 import { ControlledSelect } from '@/fields/ControlledSelect';
 import { ControlledTextField } from '@/fields/ControlledTextField';
+import { useDomainItems, useGetDomainById } from '@/hooks/domains';
 import { useCapabilityCreateMutation } from '@/queries/capabilities';
 import { requiredValidation } from '@/utils/validators';
 import { useQueryClient } from '@tanstack/react-query';
@@ -11,7 +12,6 @@ import { FormProvider, useForm, useFormState } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 
 import { useStyles } from './AddCapability.styles';
-import { useDomainItems, useGetDomainById } from './hooks';
 
 export interface AddCapabilityNameValues {
   capabilityName: string;

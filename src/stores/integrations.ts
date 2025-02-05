@@ -1,20 +1,24 @@
 import { create } from 'zustand';
 
 type State = {
-  activeCapability?: number;
+  activeCapabilities?: Array<number>;
 };
 
 type Actions = {
-  setActiveCapability: (activeDomain?: number) => void;
+  setActiveCapability: (activeCapability: number) => void;
 };
 
 export const useIntegrationsStore = create<State & Actions>((set) => ({
-  activeCapability: undefined,
+  activeCapabilities: [],
   setActiveCapability: (activeCapability) =>
-    set((state) => ({
-      activeCapability:
-        state.activeCapability === activeCapability
-          ? undefined
-          : activeCapability,
-    })),
+    set((state) => {
+      const activeCapabilities = state.activeCapabilities?.includes(
+        activeCapability || 0,
+      )
+        ? state.activeCapabilities.filter((id) => id !== activeCapability)
+        : [...(state.activeCapabilities || []), activeCapability];
+      return {
+        activeCapabilities,
+      };
+    }),
 }));

@@ -59,6 +59,7 @@ export const DomainsTable = () => {
       disableColumnFilter
       disableColumnSorting
       disableColumnMenu
+      disableColumnResize
       pageSizeOptions={[5, 10, 15, 25]}
     />
   );
