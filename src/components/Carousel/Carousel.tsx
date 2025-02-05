@@ -15,12 +15,12 @@ const CustomButtonGroupAsArrows = ({ next, previous }) => {
     <div css={styles.carouselBackground}>
       <div css={styles.carouselBackgroundButton}>
         <IconButton aria-label="arrow-previous" onClick={previous}>
-          <ArrowLeftIcon />
+          <ArrowLeftIcon css={styles.carouselIcon} />
         </IconButton>
       </div>
       <div css={styles.carouselBackgroundButton}>
         <IconButton aria-label="arrow-next" onClick={next}>
-          <ArrowRightIcon />
+          <ArrowRightIcon css={styles.carouselIcon} />
         </IconButton>
       </div>
     </div>

@@ -45,7 +45,7 @@ const DeleteIcon = (props) => {
   return (
     <DeleteFIlledIcon
       {...props}
-      css={{ fill: `${palette.text.primary} !important` }}
+      css={{ fill: `${palette.text.primary}` }}
       onClick={() => {
         props.id && deleteCapabilityMutate(props.id);
       }}

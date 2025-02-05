@@ -1,7 +1,9 @@
 import { i18n } from '@/i18n';
 import isEmpty from 'validator/lib/isEmpty';
+import isURL from 'validator/lib/isURL';
 
 const REQUIRED_MSG = i18n.t('Required');
+const INVALID_URL_MSG = i18n.t('URL is invalid');
 
 type ValidatorValue = string | undefined;
 type ValidatorValues = Record<string, string>;
@@ -36,4 +38,8 @@ export const requiredValidation = (value: string | number | null = '') => {
   return isEmpty(value.toString(), { ignore_whitespace: true })
     ? REQUIRED_MSG
     : undefined;
+};
+
+export const linkValidation = (value: string = '') => {
+  return isURL(value, { require_protocol: true }) ? undefined : INVALID_URL_MSG;
 };

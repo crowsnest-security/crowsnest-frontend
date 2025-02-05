@@ -16,12 +16,18 @@ export const ChipGroup: React.FC<ChipGroupProps> = ({
   const styles = useStyles();
 
   return (
-    <Box display="flex" flexDirection="row" gap={1}>
+    <Box
+      display="flex"
+      flexDirection="row"
+      gap={1}
+      flexWrap="wrap"
+      alignItems="stretch"
+    >
       {chips?.map((chip) => (
         <Chip
+          key={chip.id}
           css={[styles.root, activeChip === chip?.id && styles.activeChip]}
           variant="outlined"
-          key={chip.id}
           label={chip.label}
           onClick={() => setActiveChip(chip.id)}
         />
