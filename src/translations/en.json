@@ -16,14 +16,19 @@
   },
   "header": {
     "appName": "Governance Engine",
-    "search": "Search"
+    "search": "Search",
+    "darkMode": "Dark mode",
+    "lightMode": "Light mode"
   },
   "routes": {
-    "dashboard": "Dashboard"
+    "dashboard": "Dashboard",
+    "applications": "Applications",
+    "profiles": "Profiles"
   },
   "dashboard": {
     "descriptions": {
       "index": "Current domains and configured capability integrations"
-    }
+    },
+    "keyCapabilities": "Key capabilities"
   }
 }

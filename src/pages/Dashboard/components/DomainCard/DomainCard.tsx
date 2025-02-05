@@ -7,6 +7,7 @@ import { Typography } from '@/components/Typography';
 import { useCapabilityListWithDomainQuery } from '@/queries/capabilities';
 import { useFlagsListQuery } from '@/queries/flag';
 import { Box, IconButton } from '@mui/material';
+import { useTranslation } from 'react-i18next';
 
 import { useStyles } from './DomainCard.styles';
 
@@ -32,6 +33,7 @@ const ContentItem: React.FC<ContentItemProps> = ({ checked, title }) => {
 };
 
 export const DomainCard: React.FC<DomainCardProps> = ({ domainId }) => {
+  const { t } = useTranslation();
   const { data: capabilities } = useCapabilityListWithDomainQuery({ domainId });
   const { data: flags } = useFlagsListQuery();
   const redFlagId = flags?.find((flag) => flag.description === 'red')?.id;
@@ -49,7 +51,9 @@ export const DomainCard: React.FC<DomainCardProps> = ({ domainId }) => {
       title={domain?.description}
       content={
         <>
-          <Typography variant="overline">Key capabilities</Typography>
+          <Typography variant="overline">
+            {t('dashboard.keyCapabilities')}
+          </Typography>
           {capabilities?.map((capability) => (
             <ContentItem
               key={capability.description}

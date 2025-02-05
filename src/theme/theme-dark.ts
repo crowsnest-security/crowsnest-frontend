@@ -55,9 +55,9 @@ export const themeDark = createTheme({
       contrastText: 'rgba(255, 255, 255, 1)', //#FFFFFF
     },
     text: {
-      primary: 'rgba(0, 0, 0, 0.87)', //#000000DE
-      secondary: 'rgba(0, 0, 0, 0.6)', //#00000099
-      disabled: 'rgba(0, 0, 0, 0.38)', //#00000061
+      primary: '#fff',
+      secondary: 'rgba(255, 255, 255, 0.7)',
+      disabled: 'rgba(255, 255, 255, 0.5)',
     },
     action: {
       active: 'rgba(0, 0, 0, 0.56)', // #0000008F
@@ -68,8 +68,13 @@ export const themeDark = createTheme({
       disabled: 'rgba(0, 0, 0, 0.38)', //#00000061
     },
     // other colors
-    divider: 'rgba(0, 0, 0, 0.12)', //#0000001F
+    divider: 'rgba(255, 255, 255, 0.12)',
     focusVisible: 'rgba(25, 118, 210, 0.3)', //#1976D24D
+
+    background: {
+      default: '#303030',
+      paper: '#424242',
+    },
   },
   typography: {
     fontSize: 16,

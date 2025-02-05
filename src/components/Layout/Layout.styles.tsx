@@ -17,7 +17,17 @@ export const useStyles = () => {
       display: 'flex',
       flexDirection: 'row',
       flexGrow: 1,
-      maxHeight: `calc(100vh - ${HEADER_HEIGHT})`,
+      height: `calc(100vh - ${HEADER_HEIGHT}px)`,
+    }),
+
+    content: css({
+      display: 'flex',
+      flexDirection: 'column',
+      flexGrow: 1,
+      padding: spacing(4, 0),
+      gap: spacing(4),
+
+      maxHeight: `calc(100vh - ${HEADER_HEIGHT}px)`,
       overflowY: 'scroll',
 
       '&::-webkit-scrollbar': {
@@ -36,14 +46,6 @@ export const useStyles = () => {
       '&::-webkit-scrollbar-thumb:hover': {
         background: palette.action.disabled,
       },
-    }),
-
-    content: css({
-      display: 'flex',
-      flexDirection: 'column',
-      flexGrow: 1,
-      padding: spacing(4, 0),
-      gap: spacing(4),
     }),
 
     controls: css({
