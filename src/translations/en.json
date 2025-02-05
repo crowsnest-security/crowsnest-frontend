@@ -33,13 +33,13 @@
     },
     "keyCapabilities": "Key capabilities"
   },
-  "domains" : {
+  "domains": {
     "addDomain": "Add domain",
     "alert": "Deleting a domain will delete any associated child capabilities",
     "placeholder": "Name",
     "domainName": "Domain Name *"
   },
   "validation": {
-    "required":"Required"
+    "required": "Required"
   }
 }
