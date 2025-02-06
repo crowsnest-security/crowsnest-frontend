@@ -1,3 +1,4 @@
+import { ClassNames } from '@emotion/react';
 import { Dialog, DialogTitle } from '@mui/material';
 import React from 'react';
 
@@ -15,16 +16,21 @@ export const ModalsContainer: React.FC<ModalContainerProps> = ({
   const modalStyles = useStyles();
 
   return (
-    <Dialog
-      onClose={onClose}
-      open={open}
-      {...otherProps}
-      css={modalStyles.paperScrollPaper} // TODO: add classname from outside
-    >
-      <DialogTitle css={modalStyles.title} variant="h6">
-        {title}
-      </DialogTitle>
-      {children}
-    </Dialog>
+    <ClassNames>
+      {({ css, cx }) => (
+        <Dialog
+          onClose={onClose}
+          open={open}
+          {...otherProps}
+          className={className}
+          css={[modalStyles.paperScrollPaper]}
+        >
+          <DialogTitle css={modalStyles.title} variant="h6">
+            {title}
+          </DialogTitle>
+          {children}
+        </Dialog>
+      )}
+    </ClassNames>
   );
 };

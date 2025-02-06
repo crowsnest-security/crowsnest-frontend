@@ -23,12 +23,23 @@
   "routes": {
     "dashboard": "Dashboard",
     "applications": "Applications",
-    "profiles": "Profiles"
+    "profiles": "Profiles",
+    "domains": "Domains"
   },
   "dashboard": {
     "descriptions": {
-      "index": "Current domains and configured capability integrations"
+      "index": "Current domains and configured capability integrations",
+      "domains": "Manage the application domains"
     },
     "keyCapabilities": "Key capabilities"
+  },
+  "domains": {
+    "addDomain": "Add domain",
+    "alert": "Deleting a domain will delete any associated child capabilities",
+    "placeholder": "Name",
+    "domainName": "Domain Name *"
+  },
+  "validation": {
+    "required": "Required"
   }
 }

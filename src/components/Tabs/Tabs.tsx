@@ -24,7 +24,7 @@ export const Tabs: React.FC<TabsProps> = ({
   return (
     <MuiTabs
       css={css(styles.withBackground)}
-      className={`   ${className || ''}`}
+      className={` ${className || ''}`}
       {...props}
     >
       {tabs?.map((tab) => (

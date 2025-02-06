@@ -27,7 +27,7 @@ export const useStyles = () => {
       padding: spacing(4, 0),
       gap: spacing(4),
 
-      maxHeight: `calc(100vh - ${HEADER_HEIGHT}px)`,
+      maxHeight: '100vh',
       overflowY: 'scroll',
 
       '&::-webkit-scrollbar': {
