@@ -19,6 +19,8 @@ export const useCapabilityListQuery = () =>
   useQuery({
     queryKey: [CAPABILITIES_QUERY_KEY],
     queryFn: fetchCapabilitiesList,
+    select: (data) =>
+      data?.sort((a, b) => a.description.localeCompare(b.description)),
     staleTime: 600_000, //10 mins
   });
 
