@@ -6,7 +6,7 @@ import { useProfilesListQuery } from '@/queries/profile';
 import { Box, CircularProgress } from '@mui/material';
 import { Outlet, useLocation } from 'react-router';
 
-import { Breadcrumbs } from '../Breadcrumbs';
+// import { Breadcrumbs } from '../Breadcrumbs';
 import { ModeSwitch } from '../ModeSwitch';
 import { ProfilesGroup } from '../ProfilesGroup';
 import { Typography } from '../Typography';
@@ -33,7 +33,8 @@ export const AuthorizedLayout: React.FC = () => {
         ) : (
           <Box css={styles.content}>
             <Box css={styles.controls}>
-              <Breadcrumbs />
+              {/* TODO: disabled for now due to tabs have the same functionality */}
+              {/* <Breadcrumbs /> */}
               <Box css={styles.leftControls}>
                 {isDashboardActive && <ProfilesGroup />}
                 <ModeSwitch />

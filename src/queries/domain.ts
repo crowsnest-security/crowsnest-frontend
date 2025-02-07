@@ -15,7 +15,7 @@ export const useDomainsListQuery = () => {
   });
 };
 
-const createMutation = (domainData: Omit<Domain, 'id'>) => {
+const createDomain = (domainData: Omit<Domain, 'id'>) => {
   return axios({
     url: DOMAINS_ENDPOINT,
     method: 'POST',
@@ -30,10 +30,10 @@ export const useDomainCreateMutation = ({
 }: {
   onSuccess: () => void;
 }) => {
-  return useMutation({ mutationFn: createMutation, onSuccess });
+  return useMutation({ mutationFn: createDomain, onSuccess });
 };
 
-const deleteMutation = (domainId: string) => {
+const deleteDomain = (domainId: string) => {
   return axios({
     url: `${DOMAINS_ENDPOINT}/${domainId}`,
     method: 'DELETE',
@@ -45,5 +45,5 @@ export const useDomainDeleteMutation = ({
 }: {
   onSuccess: () => void;
 }) => {
-  return useMutation({ mutationFn: deleteMutation, onSuccess });
+  return useMutation({ mutationFn: deleteDomain, onSuccess });
 };

@@ -4,7 +4,7 @@ import { AutoSizer } from 'react-virtualized';
 
 import { useStyles } from './Table.styles';
 
-const paginationModel = { page: 0, pageSize: 5 };
+const paginationModel = { page: 0, pageSize: 10 };
 
 export const Table: React.FC<DataGridProps> = (props) => {
   const styles = useStyles();
