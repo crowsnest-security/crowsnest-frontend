@@ -1,3 +1,4 @@
+import { useGetIntegrationByCapabilityId } from '@/hooks/integrations/useGetIntegrationByCapabilityId';
 import { Box } from '@mui/material';
 import {
   TreeItem2Checkbox,
@@ -28,6 +29,8 @@ export const TreeItem = forwardRef(function CustomTreeItem(
 ) {
   const { id, itemId, label, disabled, children, ...other } = props;
 
+  const getIntegrationByCapabilityId = useGetIntegrationByCapabilityId();
+
   const {
     getRootProps,
     getContentProps,
@@ -39,6 +42,11 @@ export const TreeItem = forwardRef(function CustomTreeItem(
     status,
   } = useTreeItem2({ id, itemId, children, label, disabled, rootRef: ref });
 
+  const isCapabilityItem = !children;
+
+  const enableCapabilityDeletion =
+    isCapabilityItem && !getIntegrationByCapabilityId(itemId);
+
   return (
     <TreeItem2Provider itemId={itemId}>
       <TreeItem2Root {...getRootProps(other)}>
@@ -47,7 +55,7 @@ export const TreeItem = forwardRef(function CustomTreeItem(
             <TreeItem2Icon status={status} />
           </TreeItem2IconContainer>
           <Box sx={{ flexGrow: 1, display: 'flex', gap: 1 }}>
-            {!children && <DeleteIcon id={itemId} />}
+            {enableCapabilityDeletion && <DeleteIcon id={itemId} />}
 
             <TreeItem2Checkbox {...getCheckboxProps()} />
             <TreeItem2Label {...getLabelProps()} />
