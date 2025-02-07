@@ -2,6 +2,8 @@ import { TreeView } from '@/components/TreeView';
 import { useCapabilityListWithDomainQuery } from '@/queries/capabilities';
 import { useMemo } from 'react';
 
+import { TreeItem } from '../TreeItem';
+
 export const CapabilitiesTreeView = () => {
   const { data } = useCapabilityListWithDomainQuery();
 
@@ -24,5 +26,5 @@ export const CapabilitiesTreeView = () => {
     );
   }, [data]);
 
-  return <TreeView items={treeItems || []} />;
+  return <TreeView items={treeItems || []} customTreeItem={TreeItem} />;
 };
