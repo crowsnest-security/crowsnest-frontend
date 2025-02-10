@@ -42,7 +42,8 @@
     "addDomain": "Add domain",
     "alert": "Deleting a domain will delete any associated child capabilities",
     "placeholder": "Name",
-    "domainName": "Domain Name *"
+    "domainName": "Domain Name *",
+    "search": "Search domain"
   },
   "validation": {
     "required": "Required"
@@ -74,11 +75,11 @@
     "cancel": "Cancel"
   },
   "profiles": {
-    "addNew":"Add new profile",
+    "addNew": "Add new profile",
     "profileName": "Profile name",
-    "profileDescription": "Profile description" ,
-    "profileDescriptionPlaceholder": "Description of the profile" ,
-    "selectDomains":"Select Domains to form the Profile",
+    "profileDescription": "Profile description",
+    "profileDescriptionPlaceholder": "Description of the profile",
+    "selectDomains": "Select Domains to form the Profile",
     "cancel": "Cancel",
     "addProfile": "Add Profile",
     "editProfile": "Edit Profile"
