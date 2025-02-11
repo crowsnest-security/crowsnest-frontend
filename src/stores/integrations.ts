@@ -1,20 +1,17 @@
 import { create } from 'zustand';
 
 type State = {
-  activeCapability?: number;
+  activeCapability: string;
 };
 
 type Actions = {
-  setActiveCapability: (activeDomain?: number) => void;
+  setActiveCapability: (activeDomain?: string) => void;
 };
 
 export const useIntegrationsStore = create<State & Actions>((set) => ({
-  activeCapability: undefined,
+  activeCapability: '',
   setActiveCapability: (activeCapability) =>
-    set((state) => ({
-      activeCapability:
-        state.activeCapability === activeCapability
-          ? undefined
-          : activeCapability,
+    set(() => ({
+      activeCapability,
     })),
 }));

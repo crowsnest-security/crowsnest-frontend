@@ -1,9 +1,8 @@
-import { ChipGroup } from '@/components/ChipGroup';
 import { Typography } from '@/components/Typography';
 import { useCapabilityListQuery } from '@/queries/capabilities';
 import { useIntegrationsListQuery } from '@/queries/integration';
 import { useIntegrationsStore } from '@/stores/integrations';
-import { Box } from '@mui/material';
+import { Box, FormControl, InputLabel, MenuItem, Select } from '@mui/material';
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -27,10 +26,14 @@ export const CapabilityFilters = () => {
       capabilities?.find((capability) => capability.id === capabilityId)
         ?.description || '';
 
-    return capabilitiesIds?.map((capabilityId) => ({
-      id: capabilityId,
+    const resultItems = capabilitiesIds?.map((capabilityId) => ({
+      id: capabilityId.toString(),
       label: getCapabilityNameById(capabilityId),
     }));
+
+    resultItems.unshift({ id: '', label: 'All' });
+
+    return resultItems;
   }, [integrations, capabilities]);
 
   return (
@@ -39,11 +42,23 @@ export const CapabilityFilters = () => {
         {t('integrations.filterBy')}
       </Typography>
       {capabilityItems?.length > 0 && (
-        <ChipGroup
-          chips={capabilityItems}
-          activeChip={activeCapability}
-          setActiveChip={setActiveCapability}
-        />
+        <FormControl fullWidth>
+          <InputLabel id="capability-filter">Capability</InputLabel>
+          <Select
+            labelId="capability-filter-select-label"
+            id="capability-filter-select"
+            value={activeCapability}
+            label="Capability"
+            onChange={(event) => {
+              setActiveCapability(event?.target?.value || '');
+            }}
+            css={styles.filterSelect}
+          >
+            {capabilityItems?.map((capability) => (
+              <MenuItem value={capability.id}>{capability.label}</MenuItem>
+            ))}
+          </Select>
+        </FormControl>
       )}
     </Box>
   );

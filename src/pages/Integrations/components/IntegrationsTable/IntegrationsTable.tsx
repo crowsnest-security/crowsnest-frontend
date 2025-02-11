@@ -16,7 +16,8 @@ export const IntegrationsTable = () => {
     }
 
     return integrations?.filter(
-      (integration) => integration.capability === activeCapability,
+      (integration) =>
+        integration.capability.toString() === activeCapability.toString(),
     );
   }, [activeCapability, integrations]);
 

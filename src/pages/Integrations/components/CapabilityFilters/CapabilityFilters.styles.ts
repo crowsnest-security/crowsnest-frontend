@@ -16,5 +16,9 @@ export const useStyles = () => {
       marginRight: spacing(2),
       textWrap: 'nowrap',
     }),
+
+    filterSelect: css({
+      minWidth: 250,
+    }),
   };
 };
