@@ -44,7 +44,13 @@
     "alert": "Deleting a domain will delete any associated child capabilities",
     "placeholder": "Name",
     "domainName": "Domain Name *",
-    "search": "Search domain"
+    "search": "Search domain",
+    "delete": "Delete Domain?",
+    "deleteContent": {
+      "text1": "This action will remove the selected domain and any associated capabilities.",
+      "text2": "Monitoring will no longer be performed.",
+      "text3": "Are you sure?"
+    }
   },
   "validation": {
     "required": "Required",
@@ -58,8 +64,14 @@
     "note": "Note: You cannot delete capabilities which have active integrations",
     "capabilityName": "Capability Name *",
     "placeholder": "Name",
-    "selectDomain": "Select Domain *",
-    "addCapability": "Add capability"
+    "selectDomain": "Select Domain *", 
+    "addCapability": "Add capability",
+    "delete": "Delete capability?",
+    "deleteContent": {
+      "text1": "This action will remove the selected capability.",
+      "text2": "Monitoring will no longer be performed.",
+      "text3": "Are you sure?"
+    }
   },
   "integrations": {
     "addNew": "Add new integration",
@@ -77,6 +89,16 @@
     "successCriteriaDescription": "Success criteria depends on the specific integration. For example it could be a number (such as %) or boolean (true/false, yes/no)",
     "addIntegration": "Add integration",
     "editIntegration": "Edit integration",
+    "cancel": "Cancel",
+    "delete": "Delete integration?",
+    "deleteContent": {
+      "text1": "This action will remove the selected integration.",
+      "text2": "Monitoring will no longer be performed.",
+      "text3": "Are you sure?"
+    }
+  },
+  "submissionModal": {
+    "delete": "Delete",
     "cancel": "Cancel"
   },
   "profiles": {

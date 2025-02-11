@@ -5,6 +5,19 @@ import { GridColDef } from '@mui/x-data-grid';
 import { ActionsCell } from './ActionsCell';
 import { CapabilitiesCell } from './CapabilityCell';
 
+const TableCellWrapper: React.FC<React.PropsWithChildren> = ({ children }) => {
+  return (
+    <Box
+      display="flex"
+      justifyContent="flex-start"
+      alignItems="center"
+      height="100%"
+    >
+      {children}
+    </Box>
+  );
+};
+
 export const COLUMNS: GridColDef[] = [
   { field: 'name', headerName: 'Integration name', flex: 1 },
 
@@ -16,7 +29,18 @@ export const COLUMNS: GridColDef[] = [
   },
   { field: 'url', headerName: 'URL endpoint', flex: 1 },
 
-  { field: 'user', headerName: 'Username', flex: 1 },
+  {
+    field: 'user',
+    headerName: 'Username',
+    flex: 1,
+    renderCell: ({ value }) => {
+      return (
+        <TableCellWrapper>
+          <Typography variant="body2">{value || '-'}</Typography>
+        </TableCellWrapper>
+      );
+    },
+  },
 
   {
     field: 'password',
@@ -24,14 +48,9 @@ export const COLUMNS: GridColDef[] = [
     flex: 1,
     renderCell: () => {
       return (
-        <Box
-          display="flex"
-          justifyContent="flex-start"
-          alignItems="center"
-          height="100%"
-        >
+        <TableCellWrapper>
           <Typography variant="body2">******</Typography>
-        </Box>
+        </TableCellWrapper>
       );
     },
   },
@@ -40,18 +59,6 @@ export const COLUMNS: GridColDef[] = [
     field: 'hash',
     headerName: 'Integration hash',
     flex: 1,
-    renderCell: () => {
-      return (
-        <Box
-          display="flex"
-          justifyContent="flex-start"
-          alignItems="center"
-          height="100%"
-        >
-          <Typography variant="body2">XXXXX</Typography>
-        </Box>
-      );
-    },
   },
   {
     field: 'action',

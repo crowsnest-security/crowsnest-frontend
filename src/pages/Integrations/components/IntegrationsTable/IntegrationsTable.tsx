@@ -8,17 +8,18 @@ import { COLUMNS } from './columns';
 export const IntegrationsTable = () => {
   const { data: integrations } = useIntegrationsListQuery();
 
-  const { activeCapabilities } = useIntegrationsStore();
+  const { activeCapability } = useIntegrationsStore();
 
   const data = useMemo(() => {
-    if (!activeCapabilities || activeCapabilities?.length === 0) {
+    if (!activeCapability) {
       return integrations;
     }
 
-    return integrations?.filter((integration) =>
-      activeCapabilities?.includes(integration.capability),
+    return integrations?.filter(
+      (integration) =>
+        integration.capability.toString() === activeCapability.toString(),
     );
-  }, [activeCapabilities, integrations]);
+  }, [activeCapability, integrations]);
 
   return (
     <Table

@@ -72,14 +72,12 @@ const FormContext = ({
           name="username"
           label={t('integrations.username')}
           placeholder={t('integrations.username')}
-          rules={{ validate: requiredValidation }}
           css={styles.flexRowItem}
         />
         <ControlledTextField
           name="password"
           label={t('integrations.password')}
           placeholder={t('integrations.password')}
-          rules={{ validate: requiredValidation }}
           type="password"
           css={styles.flexRowItem}
         />
@@ -106,7 +104,6 @@ const FormContext = ({
         name="token"
         label={t('integrations.token')}
         placeholder={t('integrations.value')}
-        rules={{ validate: requiredValidation }}
         multiline
       />
 
