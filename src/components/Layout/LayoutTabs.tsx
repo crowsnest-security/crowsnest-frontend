@@ -1,6 +1,6 @@
 import { Tabs } from '@/components/Tabs';
-import { Routes } from '@/constants/routes';
-import { useCommonDataStore } from '@/stores/common';
+import { UserRole } from '@/constants/auth';
+import { useAuthStore } from '@/stores/auth';
 import { useEffect, useState } from 'react';
 import { To, useLocation, useNavigate } from 'react-router';
 
@@ -9,9 +9,10 @@ import { DASHBOARD_TAB_VALUE, TABS } from './constants';
 
 export const LayoutTabs = () => {
   const [activeTab, setActiveTab] = useState(DASHBOARD_TAB_VALUE);
-  const { mode } = useCommonDataStore();
+
   const styles = useStyles();
   const navigate = useNavigate();
+  const { userRole } = useAuthStore();
 
   const { pathname } = useLocation();
 
@@ -19,19 +20,11 @@ export const LayoutTabs = () => {
   useEffect(() => {
     const activeRoute = TABS?.find((tab) => tab.value === activeTab)?.route;
 
-    if (pathname !== activeRoute && mode === 'admin') {
+    if (pathname !== activeRoute) {
       const newTab = TABS?.find((tab) => tab.route === pathname);
       newTab?.value && setActiveTab(newTab?.value);
     }
   }, [pathname]);
-
-  // when switch to dev mode
-  useEffect(() => {
-    if (mode === 'dev') {
-      navigate(Routes.INDEX);
-      setActiveTab(DASHBOARD_TAB_VALUE);
-    }
-  }, [mode, navigate]);
 
   const handleChange = (_event: React.SyntheticEvent, newValue: number) => {
     setActiveTab(newValue);
@@ -41,7 +34,7 @@ export const LayoutTabs = () => {
     }
   };
 
-  const isAdminMode = mode === 'admin';
+  const isAdminMode = userRole === UserRole.ADMIN;
 
   return isAdminMode ? (
     <Tabs

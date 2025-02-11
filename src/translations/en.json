@@ -18,7 +18,8 @@
     "appName": "Governance Engine",
     "search": "Search",
     "darkMode": "Dark mode",
-    "lightMode": "Light mode"
+    "lightMode": "Light mode",
+    "logout": "Logout"
   },
   "routes": {
     "dashboard": "Dashboard",
@@ -46,7 +47,11 @@
     "search": "Search domain"
   },
   "validation": {
-    "required": "Required"
+    "required": "Required",
+    "invalidUrl": "URL is invalid",
+    "invalidEmail": "Not a valid email",
+    "emailNotExist": "Email does not exist",
+    "incorrectPassword": "Incorrect password"
   },
   "capabilities": {
     "description": "Use the tree structure to view and delete capabilities",

@@ -116,7 +116,6 @@ export const ProfilesForm: React.FC<AddProfilesFormProps> = ({
   const styles = useStyles();
 
   const isEdit = !!profile;
-  console.log('isEdit', isEdit);
 
   const formMethods = useForm<AddProfileValues>({
     mode: 'all',

@@ -2,9 +2,12 @@ import MoreVerticalIcon from '@/assets/more_vertical.svg?react';
 import { Menu, MenuItem } from '@/components/Menu';
 import { Switch } from '@/components/Switch';
 import { Typography } from '@/components/Typography';
+import { UserRole } from '@/constants/auth';
 import { useMenu } from '@/hooks/useMenu';
 import { useMUIValues } from '@/providers/muiProvider';
+import { useAuthStore } from '@/stores/auth';
 import { Box, IconButton, useTheme } from '@mui/material';
+import { useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 const ThemeSwitch = () => {
@@ -27,14 +30,31 @@ const ThemeSwitch = () => {
   );
 };
 
-const MENU_ITEMS: Array<MenuItem> = [{ content: <ThemeSwitch /> }];
+const useMenuItems = (): Array<MenuItem> => {
+  const { t } = useTranslation();
+  const { setUserRole } = useAuthStore();
+
+  const handleLogout = useCallback(() => {
+    setUserRole(UserRole.GUEST);
+  }, [setUserRole]);
+
+  return useMemo(
+    () => [
+      { content: <ThemeSwitch /> },
+      { onClick: handleLogout, content: t('header.logout') },
+    ],
+    [handleLogout, t],
+  );
+};
 
 export const ProfileMenu = () => {
   const { anchorElement, isOpen, setAnchorElement } = useMenu();
+  const menuItems = useMenuItems();
 
   const handleOpen = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElement(event.currentTarget);
   };
+
   const handleClose = () => setAnchorElement(null);
 
   return (
@@ -43,7 +63,7 @@ export const ProfileMenu = () => {
         <MoreVerticalIcon />
       </IconButton>
       <Menu
-        items={MENU_ITEMS}
+        items={menuItems}
         anchorEl={anchorElement}
         open={isOpen}
         onClose={handleClose}

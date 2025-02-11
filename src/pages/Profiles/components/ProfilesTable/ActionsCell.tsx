@@ -10,7 +10,6 @@ import { useQueryClient } from '@tanstack/react-query';
 import { ProfilesModal } from '../ProfilesModal';
 
 export const ActionsCell = ({ row }) => {
-  console.log('row', row);
   const { palette } = useTheme();
   const { isOpen, toggle } = useToggle();
   const queryClient = useQueryClient();

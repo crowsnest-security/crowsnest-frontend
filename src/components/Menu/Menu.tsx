@@ -21,11 +21,13 @@ export const Menu: React.FC<MenuProps> = ({
 }) => {
   return (
     <MuiMenu anchorEl={anchorEl} id="account-menu" open={open} {...props}>
-      {items?.map((item) =>
+      {items?.map((item, index) =>
         item.onClick ? (
-          <MenuItem onClick={item.onClick}>{item.content}</MenuItem>
+          <MenuItem key={index} onClick={item.onClick}>
+            {item.content}
+          </MenuItem>
         ) : (
-          <MenuItem>{item.content}</MenuItem>
+          <MenuItem key={index}>{item.content}</MenuItem>
         ),
       )}
     </MuiMenu>
