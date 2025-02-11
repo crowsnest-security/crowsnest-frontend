@@ -1,7 +1,10 @@
 import { ModalsContainer } from '@/components/Modal/Container';
 import { ModalsContent } from '@/components/Modal/Content';
+import { Typography } from '@/components/Typography';
 import { ProfilesForm } from '@/forms/ProfilesForm';
 import { Profile } from '@/types/profile';
+import { ClassNames } from '@emotion/react';
+import { Box } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 
 import { useStyles } from './ProfilesModal.styles';
@@ -23,14 +26,31 @@ export const ProfilesModal: React.FC<ProfileModalProps> = ({
   const styles = useStyles();
 
   return (
-    <ModalsContainer
-      open={isOpen}
-      title={profile ? t('profiles.editProfile') : t('profiles.addProfile')}
-      css={styles.modalsContent}
-    >
-      <ModalsContent>
-        <ProfilesForm onClose={onClose} onSubmit={onSubmit} profile={profile} />
-      </ModalsContent>
-    </ModalsContainer>
+    <ClassNames>
+      {({ css }) => (
+        <ModalsContainer
+          open={isOpen}
+          title={
+            <Box css={styles.header}>
+              <Typography variant="subtitle2">
+                {profile ? t('profiles.editProfile') : t('profiles.addProfile')}
+              </Typography>
+            </Box>
+          }
+          css={styles.modalsContent}
+          classes={{
+            paper: css(styles.paper),
+          }}
+        >
+          <ModalsContent>
+            <ProfilesForm
+              onClose={onClose}
+              onSubmit={onSubmit}
+              profile={profile}
+            />
+          </ModalsContent>
+        </ModalsContainer>
+      )}
+    </ClassNames>
   );
 };
