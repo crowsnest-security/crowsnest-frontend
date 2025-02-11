@@ -59,13 +59,6 @@ export const COLUMNS: GridColDef[] = [
     field: 'hash',
     headerName: 'Integration hash',
     flex: 1,
-    renderCell: () => {
-      return (
-        <TableCellWrapper>
-          <Typography variant="body2">XXXXX</Typography>
-        </TableCellWrapper>
-      );
-    },
   },
   {
     field: 'action',
