@@ -1,14 +1,13 @@
 import { css } from '@emotion/react';
+import { useTheme } from '@mui/material';
 
 export const useStyles = () => {
+  const { palette } = useTheme();
+
   return {
     root: css({
-      // display: 'flex',
-      // flexGrow: 1,
-      // alignItems: 'flex-start',
       zIndex: 100,
       width: 'calc(100% - 160px)',
-      // width: 'calc(100%)',
       placeSelf: 'center',
     }),
 
@@ -31,6 +30,10 @@ export const useStyles = () => {
       alignItems: 'center',
       height: '100%',
       width: 80,
+    }),
+
+    carouselIcon: css({
+      fill: palette.text.primary,
     }),
   };
 };

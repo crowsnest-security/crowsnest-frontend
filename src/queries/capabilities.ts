@@ -19,6 +19,7 @@ export const useCapabilityListQuery = () =>
   useQuery({
     queryKey: [CAPABILITIES_QUERY_KEY],
     queryFn: fetchCapabilitiesList,
+    staleTime: 600_000, //10 mins
   });
 
 const fetchCapabilitiesListByDomain = (

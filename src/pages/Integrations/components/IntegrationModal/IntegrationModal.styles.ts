@@ -9,7 +9,13 @@ export const useStyles = () => {
       display: 'flex',
       flexDirection: 'column',
       gap: spacing(4),
-      maxWidth: 440,
+
+      '& .MuiPaper-root': {
+        width: '100vw',
+        maxWidth: '100vw',
+
+        height: 820,
+      },
     }),
   };
 };

@@ -6,6 +6,7 @@ import { LoginPage } from '@/pages/Login';
 import { Routes as ReactRoutes, Route } from 'react-router';
 
 import { CapabilitiesPage } from './pages/Capabilities';
+import { IntegrationsPage } from './pages/Integrations';
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
         <Route index element={<DashboardPage />} />
         <Route path={Routes.DOMAINS} element={<DomainsPage />} />
         <Route path={Routes.CAPABILITIES} element={<CapabilitiesPage />} />
+        <Route path={Routes.INTEGRATIONS} element={<IntegrationsPage />} />
       </Route>
     </ReactRoutes>
   );

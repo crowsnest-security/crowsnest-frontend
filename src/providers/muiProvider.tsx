@@ -18,7 +18,7 @@ const cacheRtl = createCache({
 });
 
 const emptyCache = createCache({
-  key: 'meaningless-key',
+  key: 'key',
 });
 
 export const MUIWrapper: React.FC<React.PropsWithChildren> = ({ children }) => {

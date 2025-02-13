@@ -25,13 +25,15 @@
     "applications": "Applications",
     "profiles": "Profiles",
     "domains": "Domains",
-    "capabilities": "Capabilities"
+    "capabilities": "Capabilities",
+    "integrations": "Integrations"
   },
   "dashboard": {
     "descriptions": {
       "index": "Current domains and configured capability integrations",
       "domains": "Manage the application domains",
-      "capabilities": "Manage the capabilities associated with application domains"
+      "capabilities": "Manage the capabilities associated with application domains",
+      "integrations": "Edit current integrations or add new integration"
     },
     "keyCapabilities": "Key capabilities"
   },
@@ -39,7 +41,13 @@
     "addDomain": "Add domain",
     "alert": "Deleting a domain will delete any associated child capabilities",
     "placeholder": "Name",
-    "domainName": "Domain Name *"
+    "domainName": "Domain Name *",
+    "delete": "Delete Domain?",
+    "deleteContent": {
+      "text1": "This action will remove the selected domain and any associated capabilities.",
+      "text2": "Monitoring will no longer be performed.",
+      "text3": "Are you sure?"
+    }
   },
   "validation": {
     "required": "Required"
@@ -50,6 +58,40 @@
     "capabilityName": "Capability Name *",
     "placeholder": "Name",
     "selectDomain": "Select Domain *",
-    "addCapability": "Add capability"
+    "addCapability": "Add capability",
+    "delete": "Delete capability?",
+    "deleteContent": {
+      "text1": "This action will remove the selected capability.",
+      "text2": "Monitoring will no longer be performed.",
+      "text3": "Are you sure?"
+    }
+  },
+  "integrations": {
+    "addNew": "Add new integration",
+    "filterBy": "Filter by :",
+    "integrationName": "Integration Name",
+    "selectCapability": "Select Capability",
+    "username": "Username",
+    "password": "Password",
+    "urlEndpoint": "URL endpoint",
+    "integrationHash": "Integration Hash",
+    "integrationHashDescription": "Use the hash in your integration code",
+    "token": "Token",
+    "value": "Value",
+    "successCriteria": "Success Criteria",
+    "successCriteriaDescription": "Success criteria depends on the specific integration. For example it could be a number (such as %) or boolean (true/false, yes/no)",
+    "addIntegration": "Add integration",
+    "editIntegration": "Edit integration",
+    "cancel": "Cancel",
+    "delete": "Delete integration?",
+    "deleteContent": {
+      "text1": "This action will remove the selected integration.",
+      "text2": "Monitoring will no longer be performed.",
+      "text3": "Are you sure?"
+    }
+  },
+  "submissionModal": {
+    "delete": "Delete",
+    "cancel": "Cancel"
   }
 }

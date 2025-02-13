@@ -47,7 +47,6 @@ export const DomainCard: React.FC<DomainCardProps> = ({ domainId }) => {
     <Card
       key={domain?.description}
       status={domainStatus}
-      //   avatar={card.avatar}
       title={domain?.description}
       content={
         <>

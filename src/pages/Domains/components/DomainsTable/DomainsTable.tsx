@@ -1,4 +1,5 @@
 import DeleteFilledIcon from '@/assets/delete_filled_icon.svg?react';
+import { SubmissionModal } from '@/components/SubmissionModal/SubmissionModal';
 import { Table } from '@/components/Table';
 import { DOMAINS_QUERY_KEY } from '@/constants/queryKeys';
 import { useToggle } from '@/hooks/useToggle';
@@ -6,11 +7,11 @@ import { useDomainDeleteMutation, useDomainsListQuery } from '@/queries/domain';
 import { IconButton, useTheme } from '@mui/material';
 import { GridColDef, GridRenderCellParams } from '@mui/x-data-grid';
 import { useQueryClient } from '@tanstack/react-query';
-
-import { DeleteDomainModal } from '../DeleteDomainModal';
+import { useTranslation } from 'react-i18next';
 
 const DeleteCell = (params: GridRenderCellParams) => {
   const queryClient = useQueryClient();
+  const { t } = useTranslation();
   const { palette } = useTheme();
   const { isOpen, toggle } = useToggle();
   const domainId = params.row.id;
@@ -26,12 +27,18 @@ const DeleteCell = (params: GridRenderCellParams) => {
       <IconButton onClick={toggle}>
         <DeleteFilledIcon css={{ fill: palette.action.active }} />
       </IconButton>
-      <DeleteDomainModal
+      <SubmissionModal
         isOpen={isOpen}
         onClose={toggle}
         onSubmit={() => {
           deleteDomain(domainId);
         }}
+        title={t('domains.delete')}
+        content={[
+          t('domains.deleteContent.text1'),
+          t('domains.deleteContent.text2'),
+          t('domains.deleteContent.text3'),
+        ]}
       />
     </>
   );
