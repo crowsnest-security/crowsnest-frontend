@@ -32,8 +32,10 @@ export const SubmissionModal: React.FC<SubmissionModalProps> = ({
     <ModalsContainer open={isOpen} title={title}>
       <ModalsContent css={styles.modalsContent}>
         {Array.isArray(content) ? (
-          content?.map((item) => (
-            <Typography variant="body1">{item}</Typography>
+          content?.map((item, index) => (
+            <Typography key={index} variant="body1">
+              {item}
+            </Typography>
           ))
         ) : (
           <Typography variant="body1">{content}</Typography>

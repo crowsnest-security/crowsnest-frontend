@@ -17,7 +17,6 @@ export const useProfilesListQuery = () =>
   useQuery({
     queryKey: [PROFILES_QUERY_KEY],
     queryFn: fetchProfilesList,
-    select: (data) => data?.sort((a, b) => a.name.localeCompare(b.name)),
     staleTime: 600_000, // 10mins
   });
 
