@@ -4,9 +4,11 @@ import { Table } from '@/components/Table';
 import { DOMAINS_QUERY_KEY } from '@/constants/queryKeys';
 import { useToggle } from '@/hooks/useToggle';
 import { useDomainDeleteMutation, useDomainsListQuery } from '@/queries/domain';
+import { useDomainsStore } from '@/stores/domains';
 import { IconButton, useTheme } from '@mui/material';
 import { GridColDef, GridRenderCellParams } from '@mui/x-data-grid';
 import { useQueryClient } from '@tanstack/react-query';
+import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 const DeleteCell = (params: GridRenderCellParams) => {
@@ -56,16 +58,23 @@ const COLUMNS: GridColDef[] = [
 
 export const DomainsTable = () => {
   const { data } = useDomainsListQuery();
+  const { searchText } = useDomainsStore();
+
+  const filteredData = useMemo(
+    () => data?.filter((row) => row.description.includes(searchText)),
+    [data, searchText],
+  );
 
   return (
     <Table
-      rows={data}
+      rows={filteredData}
       columns={COLUMNS}
       disableRowSelectionOnClick
       disableAutosize
       disableColumnFilter
       disableColumnSorting
       disableColumnMenu
+      disableColumnResize
       pageSizeOptions={[5, 10, 15, 25]}
     />
   );

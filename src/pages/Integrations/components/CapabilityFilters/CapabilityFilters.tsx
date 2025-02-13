@@ -55,7 +55,9 @@ export const CapabilityFilters = () => {
             css={styles.filterSelect}
           >
             {capabilityItems?.map((capability) => (
-              <MenuItem value={capability.id}>{capability.label}</MenuItem>
+              <MenuItem key={capability.id} value={capability.id}>
+                {capability.label}
+              </MenuItem>
             ))}
           </Select>
         </FormControl>

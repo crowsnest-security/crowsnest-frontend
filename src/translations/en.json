@@ -18,7 +18,8 @@
     "appName": "Governance Engine",
     "search": "Search",
     "darkMode": "Dark mode",
-    "lightMode": "Light mode"
+    "lightMode": "Light mode",
+    "logout": "Logout"
   },
   "routes": {
     "dashboard": "Dashboard",
@@ -33,7 +34,8 @@
       "index": "Current domains and configured capability integrations",
       "domains": "Manage the application domains",
       "capabilities": "Manage the capabilities associated with application domains",
-      "integrations": "Edit current integrations or add new integration"
+      "integrations": "Edit current integrations or add new integration",
+      "profiles": "Manage the application profile mandates"
     },
     "keyCapabilities": "Key capabilities"
   },
@@ -42,6 +44,7 @@
     "alert": "Deleting a domain will delete any associated child capabilities",
     "placeholder": "Name",
     "domainName": "Domain Name *",
+    "search": "Search domain",
     "delete": "Delete Domain?",
     "deleteContent": {
       "text1": "This action will remove the selected domain and any associated capabilities.",
@@ -50,14 +53,18 @@
     }
   },
   "validation": {
-    "required": "Required"
+    "required": "Required",
+    "invalidUrl": "URL is invalid",
+    "invalidEmail": "Not a valid email",
+    "emailNotExist": "Email does not exist",
+    "incorrectPassword": "Incorrect password"
   },
   "capabilities": {
     "description": "Use the tree structure to view and delete capabilities",
     "note": "Note: You cannot delete capabilities which have active integrations",
     "capabilityName": "Capability Name *",
     "placeholder": "Name",
-    "selectDomain": "Select Domain *",
+    "selectDomain": "Select Domain *", 
     "addCapability": "Add capability",
     "delete": "Delete capability?",
     "deleteContent": {
@@ -93,5 +100,15 @@
   "submissionModal": {
     "delete": "Delete",
     "cancel": "Cancel"
+  },
+  "profiles": {
+    "addNew": "Add new profile",
+    "profileName": "Profile name",
+    "profileDescription": "Profile description",
+    "profileDescriptionPlaceholder": "Description of the profile",
+    "selectDomains": "Select Domains to form the Profile",
+    "cancel": "Cancel",
+    "addProfile": "Add Profile",
+    "editProfile": "Edit Profile"
   }
 }

@@ -5,6 +5,7 @@ import { Box, CircularProgress } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 
 import { useStyles } from './Domains.styles';
+import { DomainsSearch } from './components/DomainsSearch';
 import { DomainsTable } from './components/DomainsTable';
 
 export const DomainsPage = () => {
@@ -22,6 +23,7 @@ export const DomainsPage = () => {
             <Alert severity="warning" variant="outlined" css={styles.alert}>
               {t('domains.alert')}
             </Alert>
+            <DomainsSearch />
 
             <DomainsTable />
           </Box>

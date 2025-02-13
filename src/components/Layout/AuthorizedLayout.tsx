@@ -7,7 +7,6 @@ import { Box, CircularProgress } from '@mui/material';
 import { Outlet, useLocation } from 'react-router';
 
 // import { Breadcrumbs } from '../Breadcrumbs';
-import { ModeSwitch } from '../ModeSwitch';
 import { ProfilesGroup } from '../ProfilesGroup';
 import { Typography } from '../Typography';
 import { useStyles } from './Layout.styles';
@@ -37,7 +36,6 @@ export const AuthorizedLayout: React.FC = () => {
               {/* <Breadcrumbs /> */}
               <Box css={styles.leftControls}>
                 {isDashboardActive && <ProfilesGroup />}
-                <ModeSwitch />
               </Box>
             </Box>
             <Typography variant="body1" css={styles.description}>

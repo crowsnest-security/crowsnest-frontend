@@ -19,6 +19,8 @@ export const useCapabilityListQuery = () =>
   useQuery({
     queryKey: [CAPABILITIES_QUERY_KEY],
     queryFn: fetchCapabilitiesList,
+    select: (data) =>
+      data?.sort((a, b) => a.description.localeCompare(b.description)),
     staleTime: 600_000, //10 mins
   });
 
@@ -56,7 +58,8 @@ export const useCapabilityListWithDomainQuery = () => {
   return useQuery({
     queryKey: [CAPABILITIES_WITH_DOMAIN_QUERY_KEY],
     queryFn: fetchCapabilitiesListWithDomain,
-
+    select: (data) =>
+      data?.sort((a, b) => a.domainName.localeCompare(b.domainName)),
     staleTime: 600_000, //10 mins
   });
 };

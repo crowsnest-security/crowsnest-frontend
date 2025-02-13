@@ -3,30 +3,32 @@ import { Box, Chip as MuiChip, ChipProps as MuiChipProps } from '@mui/material';
 import { useStyles } from './ChipGroup.styles';
 
 type ChipGroupProps = {
-  chips: Array<{ label: string; id: number }>;
-  activeChip?: number;
-  setActiveChip: (id?: number) => void;
+  chips: Array<{ label: string; value: number }>;
+  activeChips?: Array<number>;
+  setActiveChip: (id: number) => void;
 };
 
 type ChipProps = MuiChipProps & {
   isActive?: boolean;
 };
 
-export const Chip: React.FC<ChipProps> = ({ onClick, label, isActive }) => {
+export const Chip: React.FC<ChipProps> = ({ onClick, isActive, ...other }) => {
   const styles = useStyles();
+
   return (
     <MuiChip
       css={[styles.root, isActive && styles.activeChip]}
       variant="outlined"
-      label={label}
       onClick={onClick}
+      {...other}
     />
   );
 };
 
 export const ChipGroup: React.FC<ChipGroupProps> = ({
   chips,
-  activeChip,
+  activeChips,
+  //single change of chip
   setActiveChip,
 }) => {
   return (
@@ -39,9 +41,10 @@ export const ChipGroup: React.FC<ChipGroupProps> = ({
     >
       {chips?.map((chip) => (
         <Chip
-          onClick={() => setActiveChip(chip.id)}
+          key={chip.value}
+          onClick={() => setActiveChip(chip.value)}
           label={chip.label}
-          isActive={activeChip === chip?.id}
+          isActive={activeChips?.includes(chip?.value)}
         />
       ))}
     </Box>

@@ -9,11 +9,11 @@ import { DomainCard } from './components/DomainCard/DomainCard';
 
 export const DashboardPage = () => {
   const styles = useStyles();
-  const { activeProfileId } = useCommonDataStore();
+  const { activeProfile } = useCommonDataStore();
   const { isLoading: isFlagsLoading } = useFlagsListQuery();
 
   const { data, isLoading: iaProfileLoading } = useProfileQuery({
-    id: activeProfileId,
+    id: activeProfile,
   });
   const { domains } = data || {};
 
@@ -28,7 +28,7 @@ export const DashboardPage = () => {
       ) : (
         hasDomains && (
           // reset carousel state on change profile
-          <Carousel key={activeProfileId}>
+          <Carousel key={activeProfile}>
             {domains?.map((domainId) => (
               <DomainCard key={domainId} domainId={domainId} />
             ))}
